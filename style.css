@@ -1,0 +1,103 @@
+/* style.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e;
+    color: #fff;
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    background-size: cover;
+    z-index: 1;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        transform: translateY(calc(-100vh)) translateX(calc(100vw));
+    }
+}
+
+.background-object {
+    position: absolute;
+    top: 100vh;
+    left: -10vw;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: move 15s linear infinite;
+    z-index: 0;
+}
+
+.background-object:nth-child(2) {
+    left: 20vw;
+    width: 40px;
+    height: 40px;
+    animation-duration: 18s;
+    animation-delay: -2s;
+}
+
+.background-object:nth-child(3) {
+    left: 50vw;
+    width: 30px;
+    height: 30px;
+    animation-duration: 22s;
+    animation-delay: -5s;
+}
+
+.background-object:nth-child(4) {
+    left: 80vw;
+    width: 25px;
+    height: 25px;
+    animation-duration: 20s;
+    animation-delay: -3s;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    animation: fadeInText 2s ease-in-out;
+    position: relative;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        padding: 0.8rem 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
